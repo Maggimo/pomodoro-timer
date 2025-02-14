@@ -46,6 +46,7 @@ function changeColor(index) {
 /*rgba(77, 218, 110, 0.15) green*/
 /*rgba(76, 172, 255, 0.15) blue*/
 
+
 window.addEventListener('click', (e) => {
     if (e.target.id !== 'extra') {
         subMenu.classList.remove('show')
