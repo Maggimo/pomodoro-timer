@@ -1,57 +1,74 @@
-<!doctype html>
+`<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
 
-    <link href="style.css" rel="stylesheet"/>
-    <script src="index_orig.js" defer></script>
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <script src="index.js" defer></script>
+    <!--    <script src="pomidoro_text.js" defer></script>-->
 </head>
-<body>
+<body class="focus">
 
-<div>
+<div class="content">
 
-
-    <div class="clock">
-        <div id="minute"></div>
-        <div id="second"></div>
+    <div class="status-indicator">
+        <p id="status">&#129504; Focus</p>
     </div>
-    <form id="form">
-        <label>
-            <span>minute 1</span>
-            <input type="number" name="1-minute" value="0" required>
-        </label>
-        <label>
-            <span>second 1</span>
-            <input type="number" name="1-second" value="3" required>
-        </label>
 
-        <label>
-            <span>minute 2</span>
-            <input type="number" name="2-minute" value="0" required>
-        </label>
+    <div class="mins">
+        <p id="minute">00</p>
+    </div>
 
-        <label>
-            <span>second 2</span>
-            <input type="number" name="2-second" value="3" required>
-        </label>
+    <div class="secs">
+        <p id="second">00</p>
+    </div>
 
-        <label>
-            <span>minute 3</span>
-            <input type="number" name="3-minute" value="1" required>
-        </label>
-        <label>
-            <span>second 3</span>
-            <input type="number" name="3-second" value="3" required>
-        </label>
-        <div>
-            <button type="submit">submit</button>
-            <button type="button" id="pause">pause</button>
-        </div>
-    </form>
+    <div class="buttons">
+        <button type="button" id="extra" class="dots">&bull;&bull;&bull;
+            <div class="subMenu hide" id="subMenu">
+                <form id="form" novalidate>
+                    <p>Время работы:</p>
+                    <label>
+                        <input type="number" name="1-minute" placeholder="MM" min=0 max=59 required value="1">
+                    </label> :
+                    <label>
+                        <input type="number" name="1-second" placeholder="SS" max="59" maxlength="2" required value="1">
+                    </label>
+                    <p>Время отдыха:</p>
+                    <label>
+                        <input type="number" name="2-minute" placeholder="MM" min="0" maxlength="2" required value="2">
+                    </label> :
+                    <label>
+                        <input type="number" name="2-second" placeholder="SS" min="0" max="59" maxlength="2" required
+                               value="2">
+                    </label>
+                    <p>Время долгого отдыха:</p>
+                    <label>
+                        <input type="number" name="3-minute" placeholder="MM" min="0" maxlength="2" required value="3">
+                    </label> :
+                    <label>
+                        <input type="number" name="3-second" placeholder="SS" min="0" max="59" maxlength="2" required
+                               value="3">
+                    </label>
+                    <!--                    <p>Время нового отдыха:</p>-->
+                    <!--                    <label>-->
+                    <!--                        <input type="number" name="4-minute" placeholder="MM" min="0" maxlength="2">-->
+                    <!--                    </label> :-->
+                    <!--                    <label>-->
+                    <!--                        <input type="number" name="4-second" placeholder="SS" min="0" max="59" maxlength="2"-->
+                    <!--                        >-->
+                    <!--                    </label>-->
+                    <p style="color: #1e286b; text-decoration: underline; cursor: pointer" id="reset">Обновить
+                        таймер</p>
+                    <button type="submit" id="pause" style="font-size: 36px; font-weight: 800">&#9655;</button>
+                    <button type="button" id="next">&#9655;&#9655;</button>
+                </form>
+            </div>
+        </button>
+    </div>
 
 </div>
 

@@ -1,0 +1,147 @@
+/*!*.background {*!*/
+/*!*    height: 100%;*!*/
+/*!*    width: 100%;*!*/
+/*!*    background-color: #FFF2F2;*!*/
+/*!*}*!*/
+/*body {*/
+/*    background-color: #FFF2F2;*/
+/*    font-family: "Roboto", serif;*/
+/*}*/
+
+/*.content {*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*}*/
+
+/*.status-indicator, .mins, .secs, .buttons {*/
+/*    justify-content: center;*/
+/*    display: flex;*/
+/*    gap: 5px;*/
+/*}*/
+
+/*.mins {*/
+/*    font-size: 80px;*/
+/*    margin-bottom: 0;*/
+/*    margin-top: 0;*/
+/*//////////////////////////////////////////////////
+/*}*/
+:root {
+    --main-color: #F2FFF5;
+    --color-15: rgba(77, 218, 110, 0.15);
+    --color-71: rgba(77, 218, 110, 0.71);
+}
+
+
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    transition: color, .5s;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-indicator, .mins, .secs, .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mins p, .secs p {
+    font-size: 200px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.mins p {
+    margin-bottom: -30px;
+}
+
+.secs p {
+    margin-top: -30px;
+}
+
+.buttons button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 0 solid black;
+    border-radius: 20px;
+}
+
+.status-indicator {
+    padding: 0 15px 0 15px;
+    border: #2d2e30 solid 1px;
+    border-radius: 100px;
+    line-height: 0;
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: -30px;
+    background-color: var(--color-15);
+    transition: color, .5s;
+
+}
+
+#extra, #next {
+    width: 80px;
+    height: 60px;
+    background-color: var(--color-15);
+    transition: color, .5s;
+
+}
+
+#pause {
+    width: 100px;
+    height: 70px;
+    background-color: var(--color-71);
+    transition: color, .5s;
+
+}
+
+#subMenu.show {
+    position: relative;
+    top: -335px;
+    left: -50px;
+    height: 285px;
+    width: 140px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: block;
+    opacity: 1;
+    cursor: default;
+    background-color: var(--main-color);
+    overflow-y: auto;
+    transition: color, .5s;
+
+}
+
+#subMenu.hide {
+    display: none;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+input {
+    width: 6ch;
+}
+
+.subMenu {
+    scrollbar-width: thin; /* "auto" или "thin"  */
+    scrollbar-color: var(--color-71) var(--main-color); /* плашка скролла и дорожка */
+    /*scroll-padding: 10px;*/
+    scroll-behavior: auto;
+}
